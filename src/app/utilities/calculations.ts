@@ -30,6 +30,26 @@ export class Calculations {
     return modeValue ?? 0;
   }
 
+  public static getMaxTemperatureValue(forecast: ForecastDto): number {
+    let maxTemperature = forecast?.list[0].main.temp_max ?? 0;
+    forecast?.list.forEach(weather => {
+      if (weather.main.temp_max > maxTemperature) {
+        maxTemperature = weather.main.temp_max;
+      }
+    });
+    return maxTemperature;
+  }
+
+  public static getMinTemperatureValue(forecast: ForecastDto): number {
+    let minTemperature = forecast?.list[0].main.temp_min ?? 0;
+    forecast?.list.forEach(weather => {
+      if (weather.main.temp_min < minTemperature) {
+        minTemperature = weather.main.temp_min;
+      }
+    });
+    return minTemperature;
+  }
+
   public static convertTimestampToStringDate(timestamp: string): string {
     let date = new Date(timestamp.replace(' ', 'T'));
     return date.toLocaleDateString('en-US');
