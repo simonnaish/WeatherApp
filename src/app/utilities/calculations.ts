@@ -1,5 +1,5 @@
-import {ForecastDto} from "../entities/forecast-dto";
-import {TemperatureType} from "../entities/temperature-type";
+import {ForecastDto} from 'src/app/entities/forecast-dto';
+import {TemperatureType} from 'src/app/entities/temperature-type';
 
 export class Calculations {
 

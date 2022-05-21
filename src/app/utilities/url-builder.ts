@@ -1,4 +1,4 @@
-import {API_KEY_ARG, DEFAULT_RECORDS_LIMIT, GEO_API_URL, WEATHER_API_URL} from "./constants";
+import {API_KEY_ARG, DEFAULT_RECORDS_LIMIT, GEO_API_URL, WEATHER_API_URL} from 'src/app/utilities/constants';
 
 export class UrlBuilder {
 
@@ -9,4 +9,5 @@ export class UrlBuilder {
   public static getCordsUrl(cityName: string): string {
     return GEO_API_URL() + `q=${cityName}&limit=${DEFAULT_RECORDS_LIMIT}&${API_KEY_ARG()}`
   }
+
 }

@@ -1,10 +1,10 @@
-import {ForecastDto} from "../entities/forecast-dto";
-import {DayDto} from "../entities/day-dto";
-import {Calculations} from "./calculations";
+import {ForecastDto} from 'src/app/entities/forecast-dto';
+import {DayDto} from 'src/app/entities/day-dto';
+import {Calculations} from 'src/app/utilities/calculations';
 
 export class DayBuilder {
 
-  static buildDaysMap(forecast: ForecastDto): Map<string, DayDto> {
+  public static buildDaysMap(forecast: ForecastDto): Map<string, DayDto> {
     let dailyMap: Map<string, DayDto> = new Map<string, DayDto>();
     for (let weather of forecast.list) {
       if (weather.dt_txt) {
