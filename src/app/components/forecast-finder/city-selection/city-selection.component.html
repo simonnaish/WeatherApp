@@ -1,0 +1,74 @@
+<div class="city-selection">
+
+  <div class="city-selection__input-form">
+    <form
+      [formGroup]="cityFormGroup"
+      (ngSubmit)="searchCoordByCityName(cityNameControl.value, countryControl?.value)">
+
+      <div class="city-selection__input-form__city-input">
+        <mat-label for="cityInput">
+          Type name of your city:
+        </mat-label>
+        <input
+          matInput
+          id="cityInput"
+          formControlName="cityName">
+      </div>
+
+      <div
+        *ngIf="displayCountryInputFlag"
+        class="city-selection__input-form__country-input">
+        <mat-label for="countryInput">
+          You can try to search with code of your country (i.e. type "de" for Germany):
+        </mat-label>
+        <input
+          matInput
+          id="countryInput"
+          formControlName="country">
+      </div>
+
+      <button
+        mat-flat-button
+        type="submit"
+        [disabled]="cityFormGroup.invalid"
+      >SUBMIT
+      </button>
+    </form>
+
+  </div>
+
+  <ng-container *ngIf="displayCitySelectFlag">
+    <div class="city-selection__select-form">
+      <div class="city-selection__cities-dropdown">
+        <mat-label>
+          Select your city:
+        </mat-label>
+        <mat-select
+          placeholder="Click here"
+          (valueChange)="submitSelectedCity($event)">
+          <mat-option
+            *ngFor="let city of foundCities"
+            [value]="city">
+            >{{city?.name}}{{city?.country}}{{city?.state}}</mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+    <div
+      *ngIf="!displayCountryInputFlag && foundCities"
+      class="city-selection__not-fount-alert">
+      <mat-label
+        for="notFoundButton"
+        class="city-select__warning">
+        If your city is not on the list click here!
+      </mat-label>
+      <button
+        mat-flat-button
+        id="notFoundButton"
+        (click)="displayCountryInput()">
+        NO
+      </button>
+    </div>
+  </ng-container>
+
+</div>

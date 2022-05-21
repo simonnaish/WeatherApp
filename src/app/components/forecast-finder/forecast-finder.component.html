@@ -1,0 +1,45 @@
+<div class="forecast-finder">
+  <div class="forecast-finder__header">
+    <h2>
+      {{(currentForecast && fiveDaysForecast) ?
+      'Now you can plan your week based on this reliable information.'
+      : 'Start from searching for your city.'}}
+    </h2>
+    <button
+      mat-flat-button
+      type="button"
+      (click)="clearFetchedData()"
+    >Search again!
+    </button>
+  </div>
+
+  <div class="forecast-finder__body">
+
+    <ng-container
+      *ngIf="currentForecast && fiveDaysForecast && currentCity; then displayResultsTemplate; else searchTemplate"></ng-container>
+
+    <ng-template #searchTemplate>
+      <div class="forecast-finder__body__city-selection">
+        <app-city-selection
+          (selectedCityEmitter)="proceedWithCity($event)"
+        ></app-city-selection>
+      </div>
+    </ng-template>
+
+    <ng-template #displayResultsTemplate>
+      <div class="forecast-finder__body__statistics">
+        <app-statistics
+          [currentForecast]="currentForecast!"
+          [currentCity]="currentCity!"
+        ></app-statistics>
+      </div>
+
+      <div class="forecast-finder__body__forecast-list">
+        <app-forecast-list
+          [fiveDaysForecast]="fiveDaysForecast!"
+        ></app-forecast-list>
+      </div>
+    </ng-template>
+  </div>
+
+</div>

@@ -1,0 +1,46 @@
+<div class="statistics">
+  <div class="statistics__header">
+    <h2>Let's sum it up for you to let you quickly see next week conditions.</h2>
+  </div>
+
+  <div class="statistics__body">
+    <div class="statistics__body__temperatures">
+
+      <div class="statistics__body__temperatures__record">
+        <mat-label>{{'Maximum temperature:'}}</mat-label>
+        <mat-label>{{maxTemperature}}</mat-label>
+      </div>
+      <div class="statistics__body__temperatures__record">
+        <mat-label>{{'Minimum temperature:'}}</mat-label>
+        <mat-label>{{minTemperature}}</mat-label>
+      </div>
+      <div class="statistics__body__temperatures__record">
+        <mat-label>{{'Mean temperature value:'}}</mat-label>
+        <mat-label>{{meanTemperature}}</mat-label>
+      </div>
+      <div class="statistics__body__temperatures__record">
+        <mat-label>{{'Mode temperature value:'}}</mat-label>
+        <mat-label>{{ modeTemperature}}</mat-label>
+      </div>
+    </div>
+
+    <div class="statistics__body__city">
+      <div class="statistics__body__city__record">
+        <mat-label>City:</mat-label>
+        <mat-label>{{currentCity.name}}</mat-label>
+      </div>
+      <div class="statistics__body__city__record">
+        <mat-label>Country:</mat-label>
+        <mat-label>{{currentCity.country}}</mat-label>
+      </div>
+      <div
+        *ngIf="currentCity?.state"
+        class="statistics__body__city__record">
+        <mat-label>State:</mat-label>
+        <mat-label>{{currentCity.state}}</mat-label>
+      </div>
+
+    </div>
+
+  </div>
+</div>
