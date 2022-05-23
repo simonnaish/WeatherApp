@@ -1,5 +1,4 @@
-import {ForecastDto} from 'src/app/entities/forecast-dto';
-import {DayDto} from 'src/app/entities/day-dto';
+import {ForecastDto, DayDto} from 'src/app/entities/models';
 
 export class DayBuilder {
 
