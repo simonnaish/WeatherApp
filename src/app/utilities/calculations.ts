@@ -4,13 +4,15 @@ import {TemperatureType} from 'src/app/entities/temperature-type';
 export class Calculations {
 
   public static getMeanValueTemperatureFromForecast(forecast: ForecastDto, valueName: TemperatureType): number {
-    let temperatureSum = 0;
     if (!forecast?.list || forecast?.list?.length === 0) {
       return 0;
     }
+
+    let temperatureSum = 0;
     forecast.list.forEach(weather => {
       temperatureSum += weather.main[valueName];
     })
+
     return temperatureSum / forecast.list.length;
   }
 
@@ -48,17 +50,6 @@ export class Calculations {
       }
     });
     return minTemperature;
-  }
-
-  public static convertTimestampToStringDate(timestamp: string): string {
-    let date = new Date(timestamp.replace(' ', 'T'));
-    return date.toLocaleDateString('en-US');
-  }
-
-  public static convertTimestampToStringTime(timestamp: string): string {
-    let date = new Date(timestamp.replace(' ', 'T'));
-    let stringArr = date.toLocaleTimeString('en-US').split(' ');
-    return stringArr[0].split(':').splice(0, 2).join(':') + stringArr[1].toString();
   }
 
 }

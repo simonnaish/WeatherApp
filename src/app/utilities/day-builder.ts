@@ -1,6 +1,5 @@
 import {ForecastDto} from 'src/app/entities/forecast-dto';
 import {DayDto} from 'src/app/entities/day-dto';
-import {Calculations} from 'src/app/utilities/calculations';
 
 export class DayBuilder {
 
@@ -8,7 +7,7 @@ export class DayBuilder {
     let dailyMap: Map<string, DayDto> = new Map<string, DayDto>();
     for (let weather of forecast.list) {
       if (weather.dt_txt) {
-        let date = Calculations.convertTimestampToStringDate(weather.dt_txt);
+        let date = weather.dt_txt.split(' ')[0];
         let dayTime = this.getDayTime(weather.dt_txt);
         let mapObject: DayDto;
         if (dailyMap.has(date)) {
@@ -37,17 +36,10 @@ export class DayBuilder {
     return dailyMap;
   }
 
+  // Assumptions: 6 <= hour < 12 -> morning; 12 <= hour < 21 -> day; 21 <= hour <  6 -> night;
   private static getDayTime(dt_txt: string): 'morningTemp' | 'dayTemp' | 'nightTemp' {
-    let stringTime = Calculations.convertTimestampToStringTime(dt_txt);
-    let hour = Number(stringTime.split(':')[0]);
-    if ((hour >= 6 && hour < 12 && stringTime.endsWith('AM'))) {
-      return 'morningTemp'
-    }
-    if ((hour === 12 && stringTime.endsWith('AM'))
-      || (hour < 9 && stringTime.endsWith('PM'))) {
-      return 'dayTemp';
-    }
-    return 'nightTemp';
+    let hour = Number(dt_txt.split(' ')[1].split(':')[0]);
+    return (hour >= 6 && hour < 12) ? 'morningTemp' : (hour >= 12 && hour < 21) ? 'dayTemp' : 'nightTemp';
   }
 
 }
