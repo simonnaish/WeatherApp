@@ -1,10 +1,9 @@
-@import 'src/styles.scss';
+@import 'src/app/styles/module.scss';
 
 .home {
   @extend .flex--col;
   @extend .height--full;
   @extend .width--full;
-  @extend .padding--2-4;
 
   justify-content: space-between;
   text-align: center;
@@ -12,10 +11,14 @@
   &__header {
     @extend .flex--col;
 
+    height: 20%;
+
     h1 {
+      @extend .margin--top-4;
       @extend .margin--bot-4;
-      font-size: 3rem;
-      font-weight: 600;
+
+      font-size: 5rem;
+      font-weight: 800;
       background-image: radial-gradient(#407de5, #9acee7);
       color: transparent;
       background-clip: text;
@@ -23,20 +26,22 @@
       padding: 1rem;
     }
 
-    h2 {
-      @extend .margin--bot-2;
-    }
   }
 
   &__body {
     @extend .flex--col;
+    @extend .padding--2-4;
+
+    height: 70%;
   }
 
   &__footer {
     @extend .flex--row;
-    @extend .margin--top-2;
-
+    height: 10%;
+    align-items: center;
     justify-content: space-between;
+    padding: 1rem 2rem;
+
 
     a {
       @extend mat-label;

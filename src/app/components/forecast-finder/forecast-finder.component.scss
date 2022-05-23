@@ -1,4 +1,4 @@
-@import 'src/styles.scss';
+@import 'src/app/styles/module.scss';
 
 .forecast-finder {
   @extend .flex--col;
@@ -20,7 +20,7 @@
     text-align: center;
 
     h2 {
-      font-size: 2rem;
+      font-size: 3.3rem;
       font-weight: 600;
       background-image: radial-gradient(#407de5 4.2%, rgb(52, 144, 27) 47.9%, rgb(122, 133, 2) 67.23%, #9acee7 89.08%);
       color: transparent;
