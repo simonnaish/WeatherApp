@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Coord} from 'src/app/entities/coord';
 import {UrlBuilder} from 'src/app/utilities/url-builder';
-import {ForecastDto} from 'src/app/entities/forecast-dto';
+import {ForecastDto, Coord} from 'src/app/entities/models';
 
 @Injectable({
   providedIn: 'root'

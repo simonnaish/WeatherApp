@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {UrlBuilder} from 'src/app/utilities/url-builder';
-import {GeoCity} from 'src/app/entities/geo-city';
+import {GeoCity} from 'src/app/entities/models';
 
 @Injectable({
   providedIn: 'root'
