@@ -1,4 +1,4 @@
-import {ForecastDto} from 'src/app/entities/forecast-dto';
+import {ForecastDto} from 'src/app/entities/models';
 import {TemperatureType} from 'src/app/entities/temperature-type';
 
 export class Calculations {
@@ -7,13 +7,10 @@ export class Calculations {
     if (!forecast?.list || forecast?.list?.length === 0) {
       return 0;
     }
-
-    let temperatureSum = 0;
-    forecast.list.forEach(weather => {
-      temperatureSum += weather.main[valueName];
-    })
-
-    return temperatureSum / forecast.list.length;
+    return forecast.list
+        .map(weatherDto => weatherDto.main[valueName])
+        .reduce((sum, temp) => sum + temp, 0)
+      / forecast.list.length
   }
 
   public static getModeValueTemperatureFromForecast(forecast: ForecastDto, valueName: TemperatureType): number {
