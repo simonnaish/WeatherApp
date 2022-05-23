@@ -1,15 +1,12 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
-import {GeoCity} from 'src/app/entities/geo-city';
-import {ForecastDto} from 'src/app/entities/forecast-dto';
-import {Coord} from 'src/app/entities/coord';
-import {DayDto} from 'src/app/entities/day-dto';
+import {ForecastDto, GeoCity, Coord, DayDto} from 'src/app/entities/models';
 import {DayBuilder} from 'src/app/utilities/day-builder';
 import {WeatherService} from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-forecast-finder',
   templateUrl: './forecast-finder.component.html',
-  styleUrls: ['./forecast-finder.component.css'],
+  styleUrls: ['./forecast-finder.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ForecastFinderComponent {

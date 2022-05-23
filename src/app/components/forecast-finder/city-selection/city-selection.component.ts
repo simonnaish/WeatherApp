@@ -1,12 +1,12 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {GeoCity} from 'src/app/entities/geo-city';
+import {GeoCity} from 'src/app/entities/models';
 import {GeocodingService} from 'src/app/services/geocoding.service';
 
 @Component({
   selector: 'app-city-selection',
   templateUrl: './city-selection.component.html',
-  styleUrls: ['./city-selection.component.css'],
+  styleUrls: ['./city-selection.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CitySelectionComponent implements OnInit {

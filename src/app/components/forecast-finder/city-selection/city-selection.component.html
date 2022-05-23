@@ -38,25 +38,31 @@
   </div>
 
   <ng-container *ngIf="displayCitySelectFlag">
+    <mat-label>We have found multiple cities with this name.</mat-label>
     <div class="city-selection__select-form">
-      <div class="city-selection__cities-dropdown">
-        <mat-label>
-          Select your city:
-        </mat-label>
-        <mat-select
-          placeholder="Click here"
-          (valueChange)="submitSelectedCity($event)">
-          <mat-option
-            *ngFor="let city of foundCities"
-            [value]="city">
-            >{{city?.name}}{{city?.country}}{{city?.state}}</mat-option>
-        </mat-select>
-      </div>
+      <mat-label>
+        Select your city:
+      </mat-label>
+      <mat-select
+        class="city-selection__select-form__mat-select"
+        placeholder="Click here"
+        (valueChange)="submitSelectedCity($event)">
+        <mat-option
+          *ngFor="let city of foundCities"
+          [value]="city">
+          <div class="city-selection__select-form__mat-select__option">
+            <p>{{city?.name}}</p>
+            <p>{{city?.state}}</p>
+            <p>{{city?.country}}</p>
+          </div>
+
+        </mat-option>
+      </mat-select>
     </div>
 
     <div
       *ngIf="!displayCountryInputFlag && foundCities"
-      class="city-selection__not-fount-alert">
+      class="city-selection__not-found-alert">
       <mat-label
         for="notFoundButton"
         class="city-select__warning">

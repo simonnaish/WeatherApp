@@ -6,10 +6,11 @@
       : 'Start from searching for your city.'}}
     </h2>
     <button
+      *ngIf="currentForecast && fiveDaysForecast"
       mat-flat-button
       type="button"
-      (click)="clearFetchedData()"
-    >Search again!
+      (click)="clearFetchedData()">
+      Search again!
     </button>
   </div>
 

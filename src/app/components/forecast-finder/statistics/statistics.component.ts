@@ -1,13 +1,12 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
-import {ForecastDto} from 'src/app/entities/forecast-dto';
-import {GeoCity} from 'src/app/entities/geo-city';
+import {ForecastDto, GeoCity} from 'src/app/entities/models';
 import {Calculations} from 'src/app/utilities/calculations';
 
 
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.css'],
+  styleUrls: ['./statistics.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StatisticsComponent implements OnInit {
@@ -40,11 +39,11 @@ export class StatisticsComponent implements OnInit {
   }
 
   private getMaxTemperatureValue(): string {
-    return Calculations.getModeValueTemperatureFromForecast(this.currentForecast, 'temp').toFixed(2);
+    return Calculations.getMaxTemperatureValue(this.currentForecast).toFixed(2);
   }
 
   private getMinTemperatureValue(): string {
-    return Calculations.getModeValueTemperatureFromForecast(this.currentForecast, 'temp').toFixed(2);
+    return Calculations.getMinTemperatureValue(this.currentForecast).toFixed(2);
   }
 
 }
