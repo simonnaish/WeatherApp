@@ -1,0 +1,88 @@
+///////////// FLEX & ...  ////////////
+
+.flex {
+  display: flex;
+
+  &--row {
+    @extend .flex;
+    flex-direction: row;
+
+  }
+
+  &--row-rev {
+    @extend .flex;
+    flex-direction: row-reverse;
+  }
+
+  &--col {
+    @extend .flex;
+    flex-direction: column;
+  }
+}
+
+
+///////////// HEIGHT  ////////////
+
+.height {
+  &--full {
+    height: 100%;
+    height: available;
+    height: -webkit-fill-available;
+  }
+}
+
+.width {
+  &--full {
+    width: 100%;
+    width: available;
+    width: -moz-available;
+    width: -webkit-fill-available;
+  }
+}
+
+
+///////////// MARGIN  ////////////
+
+.margin {
+
+  &--1 {
+    margin: 1rem;
+  }
+
+  &--2-4 {
+    margin: 2rem 4rem;
+  }
+
+  &--top-2 {
+    margin-top: 2rem;
+  }
+
+  &--top-4 {
+    margin-top: 4rem;
+  }
+
+  &--bot-2 {
+    margin-bottom: 2rem;
+  }
+
+  &--bot-4 {
+    margin-bottom: 4rem;
+  }
+}
+
+
+///////////// PADDING  ////////////
+
+.padding {
+  &--2-4 {
+    padding: 2rem 4rem;
+  }
+
+  &--1 {
+    padding: 1rem;
+  }
+
+  &--2 {
+    padding: 2rem;
+  }
+}

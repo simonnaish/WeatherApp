@@ -1,0 +1,45 @@
+@import 'src/styles.scss';
+
+.home {
+  @extend .flex--col;
+  @extend .height--full;
+  @extend .width--full;
+  @extend .padding--2-4;
+
+  justify-content: space-between;
+  text-align: center;
+
+  &__header {
+    @extend .flex--col;
+
+    h1 {
+      @extend .margin--bot-4;
+      font-size: 3rem;
+      font-weight: 600;
+      background-image: radial-gradient(#407de5, #9acee7);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      padding: 1rem;
+    }
+
+    h2 {
+      @extend .margin--bot-2;
+    }
+  }
+
+  &__body {
+    @extend .flex--col;
+  }
+
+  &__footer {
+    @extend .flex--row;
+    @extend .margin--top-2;
+
+    justify-content: space-between;
+
+    a {
+      @extend mat-label;
+    }
+  }
+}

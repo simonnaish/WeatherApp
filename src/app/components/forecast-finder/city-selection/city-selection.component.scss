@@ -1,0 +1,111 @@
+@import 'src/styles.scss';
+
+.city-selection {
+  @extend .flex--col;
+  @extend .padding--1;
+
+  background: $background-dark;
+  border-radius: 9px;
+  align-self: center;
+
+  &__input-form, &__select-form, &__not-found-alert {
+    &, &__city-input, &__country-input {
+      @extend .flex--row;
+      @extend .margin--bot-2;
+
+      height: max-content;
+      justify-content: space-between;
+      align-items: center;
+
+
+      & input, mat-select {
+        border-style: inset;
+        font-size: 1.2rem;
+        margin-left: 2rem;
+        background: $white;
+      }
+
+      mat-label {
+        white-space: nowrap;
+      }
+
+      @media only screen and (max-width: 1000px) {
+        flex-direction: column;
+        mat-label {
+          margin-bottom: 1rem;
+        }
+        & input, mat-select {
+          width: 100%;
+          width: available;
+          width: -moz-available;
+          width: -webkit-fill-available;
+
+          margin: 0 0 1rem 0;
+        }
+      }
+    }
+  }
+
+  &__input-form {
+    @extend .flex--col;
+
+    &__city-input, &__country-input {
+      //@extend .flex--row;
+      //@extend .margin--bot-2;
+      //
+      //justify-content: space-between;
+      //align-items: center;
+
+      //mat-label {
+      //  white-space: nowrap;
+      //}
+      //
+      //@media only screen and (max-width: 1000px) {
+      //  flex-direction: column;
+      //  mat-label {
+      //    margin-bottom: 1rem;
+      //  }
+      //}
+
+    }
+
+    &__city-input {
+    }
+
+    &__country-input {
+    }
+
+    & button {
+      @extend .margin--top-2;
+      @extend .button--suc;
+
+
+    }
+  }
+
+  &__select-form {
+    @extend .margin--top-2;
+
+    &__mat-select {
+      width: max-content;
+
+      &__option {
+        @extend .flex--row;
+
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__not-found-alert {
+
+    & mat-label {
+
+    }
+
+    & button {
+      @extend .button--err;
+    }
+  }
+}

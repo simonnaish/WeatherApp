@@ -1,0 +1,91 @@
+@import 'src/styles.scss';
+
+.forecast-list {
+  @extend .flex--col;
+
+
+  &__body {
+    @extend .flex--row;
+    @extend .padding--1;
+
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    overflow-x: scroll;
+
+
+    mat-card:not(:first-child) {
+      margin-left: 1rem;
+    }
+
+    & mat-card {
+      width: max-content;
+      width: -moz-max-content;
+      cursor: pointer;
+
+      & mat-card-header {
+        @extend .flex;
+
+        justify-content: center;
+
+        mat-card-title {
+          color: $special-label;
+        }
+      }
+
+      mat-card-content {
+        p {
+          span {
+            margin-left: .2rem;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 1000px) {
+      flex-direction: column;
+      width: 100%;
+
+      & mat-card {
+        margin-bottom: 1rem;
+        margin-left: 0 !important;
+      }
+    }
+
+    &__mat-card {
+      &--normal {
+
+      }
+
+      &--big {
+        padding: 2rem;
+
+        & mat-card-header mat-card-title, {
+          font-size: 2rem !important;
+          margin-bottom: 1.2rem;
+        }
+
+        & mat-card-content {
+          & mat-label {
+            font-size: 1.7rem;
+            font-weight: 900;
+            white-space: nowrap;
+            margin-bottom: .6rem;
+
+          }
+
+          p {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            margin-top: .6rem;
+
+          }
+        }
+
+        font-size: xx-large;
+      }
+    }
+
+  }
+}
