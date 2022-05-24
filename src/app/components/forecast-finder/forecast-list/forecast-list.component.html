@@ -1,13 +1,10 @@
 <div class="forecast-list">
-  <div class="forecast-list__header">
-    <h2>Check your forecast for a next 5 days!</h2>
-  </div>
-
-  <div class="forecast-list__body">
+  <div class="forecast-list">
 
     <mat-card
       *ngFor="let key of fiveDaysForecast.keys()"
-      [ngClass]="selectedDay === key ? 'forecast-list__body__mat-card--big' : 'forecast-list__body__mat-card--normal'"
+      [ngClass]="selectedDay === key ? 'forecast-list__mat-card--big' : 'forecast-list__mat-card--normal'"
+      [ngStyle]="{'background-image': 'url(\'/assets/' + fiveDaysForecast.get(key)?.imageName + '\')'}"
       (click)="setSelectedDay(key)">
       <mat-card-header>
         <mat-card-title>{{(key)}}</mat-card-title>

@@ -32,7 +32,35 @@ export class DayBuilder {
         dailyMap.set(date, mapObject);
       }
     }
+    dailyMap.forEach(value => {
+        value.imageName = this.getImageNameByTemperature(value, value?.dayTemp ? 'dayTemp' : value?.morningTemp ? 'morningTemp' : 'nightTemp');
+      }
+    );
     return dailyMap;
+  }
+
+  private static getImageNameByTemperature(day: DayDto, param: 'morningTemp' | 'dayTemp' | 'nightTemp'): string {
+    if (day[param] < -10) {
+      return 'temp_1.jpg';
+    }
+    if (day[param] <= 0) {
+      return 'temp_2.jpg';
+    }
+    if (day[param] < 15) {
+      if (day.humidity > 60) {
+        return 'temp_3.jpg';
+      } else {
+        return 'temp_4.jpg';
+      }
+    }
+    if (day[param] < 25) {
+      return 'temp_5.jpg';
+    }
+
+    if (day[param] >= 25) {
+      return 'temp_6.jpg';
+    }
+    return '';
   }
 
   // Assumptions: 6 <= hour < 12 -> morning; 12 <= hour < 21 -> day; 21 <= hour <  6 -> night;

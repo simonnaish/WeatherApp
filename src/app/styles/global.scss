@@ -1,12 +1,28 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: $background;
+}
+
 mat-label {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   font-weight: 500;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .button {
   color: white;
   font-weight: 500;
   padding: .3rem 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
 
   &--suc {
     @extend .button;
@@ -22,3 +38,6 @@ mat-label {
     background: $error;
   }
 }
+
+input {
+  box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px, rgba(17, 17, 26, 0.1) 0 8px 24px, rgba(17, 17, 26, 0.1) 0 16px 56px;}

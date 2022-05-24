@@ -16,6 +16,7 @@ import {ForecastFinderComponent} from 'src/app/components/forecast-finder/foreca
 import {CitySelectionComponent} from 'src/app/components/forecast-finder/city-selection/city-selection.component';
 import {ForecastListComponent} from 'src/app/components/forecast-finder/forecast-list/forecast-list.component';
 import {StatisticsComponent} from 'src/app/components/forecast-finder/statistics/statistics.component';
+import {AutofocusDirective} from 'src/app/utilities/autofocus.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {StatisticsComponent} from 'src/app/components/forecast-finder/statistics
     ForecastFinderComponent,
     CitySelectionComponent,
     ForecastListComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    AutofocusDirective
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,10 @@
-@import 'src/styles.scss';
+@import 'src/app/styles/module.scss';
 
 .statistics {
   @extend .flex--col;
 
   margin: 2rem 0;
   align-items: center;
-
-  &__header {
-    text-align: center;
-  }
 
   &__body {
     @extend .flex--row;
@@ -38,6 +34,12 @@
         margin-bottom: 1rem;
       }
 
+      &__record {
+        & :first-child {
+          color: $special-label;
+          margin-right: 1.5rem;
+        }
+      }
     }
   }
 }

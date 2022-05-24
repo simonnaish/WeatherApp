@@ -1,10 +1,5 @@
 <div class="forecast-finder">
   <div class="forecast-finder__header">
-    <h2>
-      {{(currentForecast && fiveDaysForecast) ?
-      'Now you can plan your week based on this reliable information.'
-      : 'Start from searching for your city.'}}
-    </h2>
     <button
       *ngIf="currentForecast && fiveDaysForecast"
       mat-flat-button
