@@ -47,34 +47,4 @@
       margin-left: 0 !important;
     }
   }
-
-  &__mat-card {
-    &--big {
-      padding: 2rem;
-      border-style: outset;
-
-      & mat-card-header mat-card-title, {
-        font-size: 2rem !important;
-        margin-bottom: 1.2rem;
-      }
-
-      & mat-card-content {
-        & > mat-label {
-          font-size: 1.7rem;
-          font-weight: 900;
-          white-space: nowrap;
-          margin-bottom: .6rem;
-        }
-
-        p {
-          font-size: 1.5rem;
-          font-weight: 500;
-          margin-bottom: 1rem;
-          margin-top: .6rem;
-        }
-      }
-
-      font-size: xx-large;
-    }
-  }
 }

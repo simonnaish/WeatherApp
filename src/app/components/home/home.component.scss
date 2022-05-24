@@ -41,6 +41,10 @@
     @extend .padding--2-4;
 
     height: 70%;
+
+    @media only screen and (max-width: 1000px) {
+      padding: 0;
+    }
   }
 
   &__footer {
