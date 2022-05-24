@@ -3,9 +3,7 @@
 
     <mat-card
       *ngFor="let key of fiveDaysForecast.keys()"
-      [ngClass]="selectedDay === key ? 'forecast-list__mat-card--big' : 'forecast-list__mat-card--normal'"
-      [ngStyle]="{'background-image': 'url(\'/assets/' + fiveDaysForecast.get(key)?.imageName + '\')'}"
-      (click)="setSelectedDay(key)">
+      [ngStyle]="{'background-image': 'url(\'/assets/' + fiveDaysForecast.get(key)?.imageName + '\')'}">
       <mat-card-header>
         <mat-card-title>{{(key)}}</mat-card-title>
       </mat-card-header>

@@ -21,6 +21,10 @@
     button {
       @extend .button--suc;
       align-self: flex-end;
+
+      @media only screen and (max-width: 1000px) {
+        margin: 1rem 1rem 0 0;
+      }
     }
   }
 
@@ -31,6 +35,10 @@
 
     &__statistics {
       @extend .width--full;
+    }
+
+    &__city-selection {
+      width: 100%;
     }
   }
 }
