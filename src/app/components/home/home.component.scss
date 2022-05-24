@@ -10,22 +10,30 @@
 
   &__header {
     @extend .flex--col;
+    text-align: start;
 
-    height: 20%;
+    background: $white;
 
+    height: 10%;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 4px 12px;
     h1 {
-      @extend .margin--top-4;
-      @extend .margin--bot-4;
+      @extend .margin--top-2;
 
-      font-size: 5rem;
+      font-size: 3rem;
       font-weight: 800;
       background-image: radial-gradient(#407de5, #9acee7);
       color: transparent;
       background-clip: text;
       -webkit-background-clip: text;
       padding: 1rem;
-    }
 
+      @media only screen and (max-width: 1000px) {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        font-size: 3rem;
+        line-height: 4rem;
+      }
+    }
   }
 
   &__body {
@@ -41,7 +49,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-
+    background: $white;
 
     a {
       @extend mat-label;

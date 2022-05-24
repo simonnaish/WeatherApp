@@ -1,92 +1,80 @@
 @import 'src/app/styles/module.scss';
 
 .forecast-list {
-  @extend .flex--col;
+  @extend .flex--row;
+  @extend .padding--1;
 
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: scroll;
 
-  &__body {
-    @extend .flex--row;
-    @extend .padding--1;
+  mat-card:not(:first-child) {
+    margin-left: 1rem;
+  }
 
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    overflow-x: scroll;
+  & mat-card {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+    background-size: cover;
+    color: white;
 
+    & mat-card-header {
+      @extend .flex;
 
-    mat-card:not(:first-child) {
-      margin-left: 1rem;
+      justify-content: center;
+
+      mat-card-title {
+        color: $white;
+        white-space: nowrap;
+      }
     }
+
+    mat-card-content {
+      p {
+        span {
+          margin-left: .2rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column;
+    width: 100%;
 
     & mat-card {
-      width: max-content;
-      width: -moz-max-content;
-      cursor: pointer;
+      margin-bottom: 1rem;
+      margin-left: 0 !important;
+    }
+  }
 
-      & mat-card-header {
-        @extend .flex;
+  &__mat-card {
+    &--big {
+      padding: 2rem;
+      border-style: outset;
 
-        justify-content: center;
-
-        mat-card-title {
-          color: $special-label;
-        }
+      & mat-card-header mat-card-title, {
+        font-size: 2rem !important;
+        margin-bottom: 1.2rem;
       }
 
-      mat-card-content {
+      & mat-card-content {
+        & > mat-label {
+          font-size: 1.7rem;
+          font-weight: 900;
+          white-space: nowrap;
+          margin-bottom: .6rem;
+        }
+
         p {
-          span {
-            margin-left: .2rem;
-          }
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin-bottom: 1rem;
+          margin-top: .6rem;
         }
       }
+
+      font-size: xx-large;
     }
-
-    @media only screen and (max-width: 1000px) {
-      flex-direction: column;
-      width: 100%;
-
-      & mat-card {
-        margin-bottom: 1rem;
-        margin-left: 0 !important;
-      }
-    }
-
-    &__mat-card {
-      &--normal {
-
-      }
-
-      &--big {
-        padding: 2rem;
-        border-style: outset;
-
-        & mat-card-header mat-card-title, {
-          font-size: 2rem !important;
-          margin-bottom: 1.2rem;
-        }
-
-        & mat-card-content {
-          & mat-label {
-            font-size: 1.7rem;
-            font-weight: 900;
-            white-space: nowrap;
-            margin-bottom: .6rem;
-
-          }
-
-          p {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            margin-top: .6rem;
-
-          }
-        }
-
-        font-size: xx-large;
-      }
-    }
-
   }
 }

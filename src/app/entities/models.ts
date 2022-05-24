@@ -65,4 +65,5 @@ export interface DayDto {
   dayTemp: number,
   nightTemp: number,
   humidity: number
+  imageName: string;
 }

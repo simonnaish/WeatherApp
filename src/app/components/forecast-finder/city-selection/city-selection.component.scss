@@ -2,11 +2,12 @@
 
 .city-selection {
   @extend .flex--col;
-  @extend .padding--1;
+  @extend .padding--2;
 
   background: $white;
   border-radius: 9px;
   align-self: center;
+  box-shadow: 5px 5px rgba(56, 149, 213, 0.24);
 
   &__input-form, &__select-form, &__not-found-alert {
     &, &__city-input, &__country-input {
@@ -25,7 +26,7 @@
         background: $white;
       }
 
-      mat-label {
+      & > mat-label {
         white-space: nowrap;
       }
 
@@ -49,37 +50,20 @@
   &__input-form {
     @extend .flex--col;
 
-    &__city-input, &__country-input {
-      //@extend .flex--row;
-      //@extend .margin--bot-2;
-      //
-      //justify-content: space-between;
-      //align-items: center;
-
-      //mat-label {
-      //  white-space: nowrap;
-      //}
-      //
-      //@media only screen and (max-width: 1000px) {
-      //  flex-direction: column;
-      //  mat-label {
-      //    margin-bottom: 1rem;
-      //  }
-      //}
-
-    }
-
-    &__city-input {
-    }
-
-    &__country-input {
-    }
-
     & button {
       @extend .margin--top-2;
       @extend .button--suc;
 
+    }
+  }
 
+  &__multiple-cities-alert {
+    @extend .padding--1;
+
+    background: $background-dark;
+
+    & > mat-label {
+      color: white;
     }
   }
 
@@ -88,6 +72,8 @@
 
     &__mat-select {
       width: max-content;
+      padding: .4rem 2rem;
+      min-width: 10rem;
 
       &__option {
         @extend .flex--row;
@@ -99,13 +85,10 @@
   }
 
   &__not-found-alert {
-
-    & mat-label {
-
-    }
-
     & button {
       @extend .button--err;
+
+      margin: unset;
     }
   }
 }

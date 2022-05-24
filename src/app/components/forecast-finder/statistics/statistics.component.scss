@@ -6,10 +6,6 @@
   margin: 2rem 0;
   align-items: center;
 
-  &__header {
-    text-align: center;
-  }
-
   &__body {
     @extend .flex--row;
     @extend .width--full;
@@ -38,6 +34,12 @@
         margin-bottom: 1rem;
       }
 
+      &__record {
+        & :first-child {
+          color: $special-label;
+          margin-right: 1.5rem;
+        }
+      }
     }
   }
 }

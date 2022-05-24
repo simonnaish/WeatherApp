@@ -10,24 +10,13 @@
     &__header, &__body {
       max-width: 100%;
     }
-
   }
 
   &__header {
     @extend .flex--col;
     @extend .margin--bot-2;
 
-    text-align: center;
-
-    h2 {
-      font-size: 3.3rem;
-      font-weight: 600;
-      background-image: radial-gradient(#407de5 4.2%, rgb(52, 144, 27) 47.9%, rgb(122, 133, 2) 67.23%, #9acee7 89.08%);
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      padding: 1rem;
-    }
+    width: 100%;
 
     button {
       @extend .button--suc;
